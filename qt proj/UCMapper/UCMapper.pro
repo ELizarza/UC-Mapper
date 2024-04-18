@@ -1,4 +1,4 @@
-QT       += core gui openglwidgets
+QT       += core gui openglwidgets opengl
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
@@ -11,14 +11,23 @@ CONFIG += c++17
 SOURCES += \
     main.cpp \
     mainwindow.cpp \
-    myglwidget.cpp
+    mapcoords.cpp \
+    myglwidget.cpp \
+    node.cpp
 
 HEADERS += \
     mainwindow.h \
-    myglwidget.h
+    mapcoords.h \
+    myglwidget.h \
+    node.h \
+    stb_image.h \
+    stb_image_resize2.h
 
 FORMS += \
     mainwindow.ui
+
+RESOURCES += \
+    textures.qrc
 
 LIBS += -lopengl32
 
