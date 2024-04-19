@@ -10,7 +10,7 @@ class mapCoords : public QWidget
 
 public slots:
     void initDestination();
-    void createSource(QVector<Node> sprites);
+    void createSource(QVector<Node *> sprites);
     void recalculateResult();
     void resultClear();
 

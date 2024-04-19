@@ -4,6 +4,7 @@
 #include "myglwidget.h"
 #include "node.h"
 #include "mapcoords.h"
+#include "coordgrid.h"
 #include <QPixmap>
 #include <QList>
 
@@ -29,12 +30,28 @@ MainWindow::MainWindow(QWidget *parent)
     mapCoords* map = new mapCoords(resultSize);
 
     //test node placement
-    QList<Node> nodes;
+    QList<Node*> nodes;
     Node* testNode = new Node();
     testNode->setNodeIcon();
-    nodes.append(*testNode);
+    //gridDot* testNode2 = new gridDot(20, 30);
+    //testNode2->setNodeIcon();
+    nodes.append(testNode);
     map->createSource(nodes);
     map->recalculateResult();
+
+
+    coordGrid* coordVisual = new coordGrid();
+    QList<gridDot*> pack;
+    pack = coordVisual->packageNodes();
+
+    for (int i = 0; i < pack.length(); i++){
+        nodes.append(pack[i]);
+    }
+
+
+    map->createSource(nodes);
+    map->recalculateResult();
+
 
     //draw map with nodes onto app
     ui->label_2->setPixmap(map->createPixmap());

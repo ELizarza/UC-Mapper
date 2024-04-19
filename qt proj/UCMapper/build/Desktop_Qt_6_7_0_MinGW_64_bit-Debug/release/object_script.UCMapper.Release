@@ -1,0 +1,11 @@
+release/coordgrid.o
+release/griddot.o
+release/main.o
+release/mainwindow.o
+release/mapcoords.o
+release/myglwidget.o
+release/node.o
+release/qrc_textures.o
+release/moc_mainwindow.o
+release/moc_mapcoords.o
+release/moc_myglwidget.o

@@ -5,14 +5,17 @@
 
 class Node
 {
-private:
+protected:
     int posX;
     int posY;
     QString name;
     QImage icon;
+    float offsetX;
+    float offsetY;
 public:
     Node();
-    Node(int x, int y, QImage img);
+    Node(int x, int y, QString setName);
+    Node(int x, int y);
     ~Node();
     void placeNode(int x, int y);
     void rename(QString newName);

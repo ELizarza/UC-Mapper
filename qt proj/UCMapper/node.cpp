@@ -5,6 +5,17 @@ Node::Node(){ //default node placed in the (sort of) center, and gives a default
     rename(QString("Untitled node"));
 }
 
+Node::Node(int x, int y, QString setName)
+{
+    placeNode(x, y);
+    rename(setName);
+}
+
+Node::Node(int x, int y)
+{
+    placeNode(x, y);
+}
+
 Node::~Node()
 {}
 
@@ -24,5 +35,7 @@ void Node::setNodeIcon() //default icon, change this in derived node class, also
     const QSize small(100, 100);
     icon = QImage(QString(":/imgs/imgs/defaultPing"));
     icon = icon.scaled(small, Qt::IgnoreAspectRatio, Qt::FastTransformation);
+    offsetX = 50;
+    offsetY = 50;
 
 }

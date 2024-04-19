@@ -11,7 +11,7 @@ void mapCoords::initDestination()
     resultImage = destinationImage;
 }
 
-void mapCoords::createSource(QVector<Node> sprites)
+void mapCoords::createSource(QVector<Node*> sprites)
 {
     //create temp overlay that will become the source img and make it transparent
     QImage overlay = QImage(resultSize, QImage::Format_ARGB32_Premultiplied);
@@ -21,14 +21,14 @@ void mapCoords::createSource(QVector<Node> sprites)
     painter.setCompositionMode(QPainter::CompositionMode_SourceOver);
 
     //for loop goes through all nodes created in main window and adds their icon to the overlay with their respective positions
-    Node temp;
+    Node* temp;
     for (int i = 0; i < sprites.length(); i++){
         temp = sprites[i];
         //convert relative coordinates to coordinates in respect to the image
         //note coordniates refer to the TOP LEFT of image
-        int canvasX = float(temp.posX)/100 * 1977;
-        int canvasY = float(temp.posY)/100 * 1896;
-        painter.drawImage(canvasX, canvasY, temp.icon);
+        int canvasX = (float(temp->posX)/100 * 1977) - temp->offsetX;
+        int canvasY = (float(temp->posY)/100 * 1896) - temp->offsetY;
+        painter.drawImage(canvasX, canvasY, temp->icon);
         //painter.drawImage(0, 0, temp.icon);
     }
     painter.end();

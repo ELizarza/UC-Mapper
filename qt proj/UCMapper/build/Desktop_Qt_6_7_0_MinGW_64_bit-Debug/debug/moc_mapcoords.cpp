@@ -40,7 +40,7 @@ constexpr auto qt_meta_stringdata_CLASSmapCoordsENDCLASS = QtMocHelpers::stringD
     "initDestination",
     "",
     "createSource",
-    "QList<Node>",
+    "QList<Node*>",
     "sprites",
     "recalculateResult",
     "resultClear"
@@ -91,7 +91,7 @@ Q_CONSTINIT const QMetaObject mapCoords::staticMetaObject = { {
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'createSource'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
-        QtPrivate::TypeAndForceComplete<QVector<Node>, std::false_type>,
+        QtPrivate::TypeAndForceComplete<QVector<Node*>, std::false_type>,
         // method 'recalculateResult'
         QtPrivate::TypeAndForceComplete<void, std::false_type>,
         // method 'resultClear'
@@ -107,7 +107,7 @@ void mapCoords::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _id, v
         (void)_t;
         switch (_id) {
         case 0: _t->initDestination(); break;
-        case 1: _t->createSource((*reinterpret_cast< std::add_pointer_t<QList<Node>>>(_a[1]))); break;
+        case 1: _t->createSource((*reinterpret_cast< std::add_pointer_t<QList<Node*>>>(_a[1]))); break;
         case 2: _t->recalculateResult(); break;
         case 3: _t->resultClear(); break;
         default: ;
