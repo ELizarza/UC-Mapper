@@ -4,19 +4,32 @@
 
 gridDot::gridDot()
     : Node() {
-    setNodeIcon();
+    //setNodeIcon();
 }
+
+gridDot::~gridDot()
+{}
 
 gridDot::gridDot(int x, int y)
     : Node(x, y)
 {
-    setNodeIcon();
+    //setNodeIcon();
 }
 
 gridDot::gridDot(int x, int y, QString setName)
     : Node(x, y, setName)
 {
-    setNodeIcon();
+    //setNodeIcon();
+}
+
+void gridDot::setVisibility(QString color)
+{
+    visibility = color;
+}
+
+QString gridDot::giveVisibility()
+{
+    return visibility;
 }
 
 void gridDot::setNodeIcon()

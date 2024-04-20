@@ -15,7 +15,8 @@ SOURCES += \
     mainwindow.cpp \
     mapcoords.cpp \
     myglwidget.cpp \
-    node.cpp
+    node.cpp \
+    pathnode.cpp
 
 HEADERS += \
     coordgrid.h \
@@ -24,6 +25,7 @@ HEADERS += \
     mapcoords.h \
     myglwidget.h \
     node.h \
+    pathnode.h \
     stb_image.h \
     stb_image_resize2.h
 

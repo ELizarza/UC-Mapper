@@ -16,12 +16,19 @@ public:
     Node();
     Node(int x, int y, QString setName);
     Node(int x, int y);
-    ~Node();
+    virtual ~Node();
     void placeNode(int x, int y);
     void rename(QString newName);
     virtual void setNodeIcon();
-    int* giveCoords();
-    friend class mapCoords;
+    virtual void setCustomIcon(QImage custom, int width, int height);
+
+    int giveX();
+    int giveY();
+    QString giveName();
+    QImage giveIcon();
+    float giveOffsetX();
+    float giveOffsetY();
+    //friend class mapCoords;
 };
 
 #endif // NODE_H

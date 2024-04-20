@@ -5,6 +5,7 @@
 #include "node.h"
 #include "mapcoords.h"
 #include "coordgrid.h"
+#include "pathnode.h"
 #include <QPixmap>
 #include <QList>
 
@@ -33,13 +34,20 @@ MainWindow::MainWindow(QWidget *parent)
     QList<Node*> nodes;
     Node* testNode = new Node();
     testNode->setNodeIcon();
+
     //gridDot* testNode2 = new gridDot(20, 30);
     //testNode2->setNodeIcon();
+
+    pathNode* testNode3 = new pathNode(40, 20);
+    testNode3->setDirection(180);
+    testNode3->setNodeIcon();
+    nodes.append(testNode3);
+
     nodes.append(testNode);
     map->createSource(nodes);
     map->recalculateResult();
 
-
+    /*
     coordGrid* coordVisual = new coordGrid();
     QList<gridDot*> pack;
     pack = coordVisual->packageNodes();
@@ -47,10 +55,9 @@ MainWindow::MainWindow(QWidget *parent)
     for (int i = 0; i < pack.length(); i++){
         nodes.append(pack[i]);
     }
-
-
     map->createSource(nodes);
     map->recalculateResult();
+    */
 
 
     //draw map with nodes onto app

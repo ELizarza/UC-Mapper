@@ -39,3 +39,44 @@ void Node::setNodeIcon() //default icon, change this in derived node class, also
     offsetY = 50;
 
 }
+
+void Node::setCustomIcon(QImage custom, int width, int height)
+{
+    const QSize small(width, height);
+    icon = custom;
+    icon = icon.scaled(small, Qt::IgnoreAspectRatio, Qt::FastTransformation);
+    offsetX = width/2;
+    offsetY = height/2;
+}
+
+
+//return functions for non-friend calls
+int Node::giveX()
+{
+    return posX;
+}
+
+int Node::giveY()
+{
+    return posY;
+}
+
+QString Node::giveName()
+{
+    return name;
+}
+
+QImage Node::giveIcon()
+{
+    return icon;
+}
+
+float Node::giveOffsetX()
+{
+    return offsetX;
+}
+
+float Node::giveOffsetY()
+{
+    return offsetY;
+}

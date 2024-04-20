@@ -8,12 +8,13 @@ class coordGrid
 {
 public:
     coordGrid();
+    ~coordGrid();
     QList<gridDot*> packageNodes();
     void excludeNode(int x, int y);
 private:
-    gridDot* matrix[25][25];
-    const int gridWidth = 25;
-    const int gridHeight = 25;
+    gridDot* matrix[15][15];
+    const int gridWidth = 15;
+    const int gridHeight = 15;
 };
 
 

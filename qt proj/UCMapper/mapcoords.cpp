@@ -26,9 +26,9 @@ void mapCoords::createSource(QVector<Node*> sprites)
         temp = sprites[i];
         //convert relative coordinates to coordinates in respect to the image
         //note coordniates refer to the TOP LEFT of image
-        int canvasX = (float(temp->posX)/100 * 1977) - temp->offsetX;
-        int canvasY = (float(temp->posY)/100 * 1896) - temp->offsetY;
-        painter.drawImage(canvasX, canvasY, temp->icon);
+        int canvasX = (float(temp->giveX())/100 * 1977) - temp->giveOffsetX();
+        int canvasY = (float(temp->giveY())/100 * 1896) - temp->giveOffsetY();
+        painter.drawImage(canvasX, canvasY, temp->giveIcon());
         //painter.drawImage(0, 0, temp.icon);
     }
     painter.end();

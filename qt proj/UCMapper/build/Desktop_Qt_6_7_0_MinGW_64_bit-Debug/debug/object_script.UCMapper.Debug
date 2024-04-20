@@ -5,6 +5,7 @@ debug/mainwindow.o
 debug/mapcoords.o
 debug/myglwidget.o
 debug/node.o
+debug/pathnode.o
 debug/qrc_textures.o
 debug/moc_mainwindow.o
 debug/moc_mapcoords.o
