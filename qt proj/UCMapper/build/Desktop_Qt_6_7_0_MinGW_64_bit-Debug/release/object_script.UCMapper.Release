@@ -1,11 +1,15 @@
 release/coordgrid.o
+release/dormbuilding.o
 release/griddot.o
+release/lecturebuilding.o
+release/locationnode.o
 release/main.o
 release/mainwindow.o
 release/mapcoords.o
 release/myglwidget.o
 release/node.o
 release/pathnode.o
+release/recreationalbuilding.o
 release/qrc_textures.o
 release/moc_mainwindow.o
 release/moc_mapcoords.o

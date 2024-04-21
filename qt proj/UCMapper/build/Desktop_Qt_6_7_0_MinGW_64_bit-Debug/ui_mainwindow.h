@@ -21,6 +21,7 @@
 #include <QtWidgets/QPushButton>
 #include <QtWidgets/QSpacerItem>
 #include <QtWidgets/QStatusBar>
+#include <QtWidgets/QTimeEdit>
 #include <QtWidgets/QVBoxLayout>
 #include <QtWidgets/QWidget>
 
@@ -37,12 +38,18 @@ public:
     QListWidget *listWidget;
     QSpacerItem *verticalSpacer;
     QPushButton *pushButton_2;
+    QPushButton *pushButton_3;
     QWidget *formLayoutWidget;
     QFormLayout *formLayout_2;
     QLabel *locationLabel;
     QComboBox *locationComboBox;
-    QPushButton *pushButton;
+    QTimeEdit *lectureStartTimeEdit;
+    QTimeEdit *lectureEndTimeEdit;
     QSpacerItem *verticalSpacer_2;
+    QLabel *lectureEndLabel;
+    QLabel *lectureStartLabel;
+    QPushButton *pushButton;
+    QPushButton *pushButton_4;
     QMenuBar *menubar;
     QStatusBar *statusbar;
 
@@ -64,7 +71,7 @@ public:
         label_2->setGeometry(QRect(0, 0, 651, 611));
         verticalLayoutWidget = new QWidget(centralwidget);
         verticalLayoutWidget->setObjectName("verticalLayoutWidget");
-        verticalLayoutWidget->setGeometry(QRect(770, 270, 531, 341));
+        verticalLayoutWidget->setGeometry(QRect(770, 310, 531, 301));
         verticalLayout = new QVBoxLayout(verticalLayoutWidget);
         verticalLayout->setObjectName("verticalLayout");
         verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -82,6 +89,11 @@ public:
 
         verticalLayout->addWidget(pushButton_2);
 
+        pushButton_3 = new QPushButton(verticalLayoutWidget);
+        pushButton_3->setObjectName("pushButton_3");
+
+        verticalLayout->addWidget(pushButton_3);
+
         formLayoutWidget = new QWidget(centralwidget);
         formLayoutWidget->setObjectName("formLayoutWidget");
         formLayoutWidget->setGeometry(QRect(770, 0, 531, 271));
@@ -98,14 +110,39 @@ public:
 
         formLayout_2->setWidget(0, QFormLayout::FieldRole, locationComboBox);
 
-        pushButton = new QPushButton(formLayoutWidget);
-        pushButton->setObjectName("pushButton");
+        lectureStartTimeEdit = new QTimeEdit(formLayoutWidget);
+        lectureStartTimeEdit->setObjectName("lectureStartTimeEdit");
 
-        formLayout_2->setWidget(2, QFormLayout::FieldRole, pushButton);
+        formLayout_2->setWidget(1, QFormLayout::FieldRole, lectureStartTimeEdit);
+
+        lectureEndTimeEdit = new QTimeEdit(formLayoutWidget);
+        lectureEndTimeEdit->setObjectName("lectureEndTimeEdit");
+
+        formLayout_2->setWidget(2, QFormLayout::FieldRole, lectureEndTimeEdit);
 
         verticalSpacer_2 = new QSpacerItem(20, 40, QSizePolicy::Policy::Minimum, QSizePolicy::Policy::Expanding);
 
-        formLayout_2->setItem(1, QFormLayout::FieldRole, verticalSpacer_2);
+        formLayout_2->setItem(3, QFormLayout::FieldRole, verticalSpacer_2);
+
+        lectureEndLabel = new QLabel(formLayoutWidget);
+        lectureEndLabel->setObjectName("lectureEndLabel");
+
+        formLayout_2->setWidget(2, QFormLayout::LabelRole, lectureEndLabel);
+
+        lectureStartLabel = new QLabel(formLayoutWidget);
+        lectureStartLabel->setObjectName("lectureStartLabel");
+
+        formLayout_2->setWidget(1, QFormLayout::LabelRole, lectureStartLabel);
+
+        pushButton = new QPushButton(formLayoutWidget);
+        pushButton->setObjectName("pushButton");
+
+        formLayout_2->setWidget(4, QFormLayout::SpanningRole, pushButton);
+
+        pushButton_4 = new QPushButton(formLayoutWidget);
+        pushButton_4->setObjectName("pushButton_4");
+
+        formLayout_2->setWidget(5, QFormLayout::SpanningRole, pushButton_4);
 
         MainWindow->setCentralWidget(centralwidget);
         menubar = new QMenuBar(MainWindow);
@@ -126,8 +163,12 @@ public:
         MainWindow->setWindowTitle(QCoreApplication::translate("MainWindow", "UC Mapper", nullptr));
         label_2->setText(QCoreApplication::translate("MainWindow", "TextLabel", nullptr));
         pushButton_2->setText(QCoreApplication::translate("MainWindow", "Remove location", nullptr));
+        pushButton_3->setText(QCoreApplication::translate("MainWindow", "Reset", nullptr));
         locationLabel->setText(QCoreApplication::translate("MainWindow", "Location", nullptr));
+        lectureEndLabel->setText(QCoreApplication::translate("MainWindow", "Lecture End", nullptr));
+        lectureStartLabel->setText(QCoreApplication::translate("MainWindow", "Lecture Start", nullptr));
         pushButton->setText(QCoreApplication::translate("MainWindow", "Add location", nullptr));
+        pushButton_4->setText(QCoreApplication::translate("MainWindow", "Route", nullptr));
     } // retranslateUi
 
 };

@@ -10,22 +10,30 @@ CONFIG += c++17
 
 SOURCES += \
     coordgrid.cpp \
+    dormbuilding.cpp \
     griddot.cpp \
+    lecturebuilding.cpp \
+    locationnode.cpp \
     main.cpp \
     mainwindow.cpp \
     mapcoords.cpp \
     myglwidget.cpp \
     node.cpp \
-    pathnode.cpp
+    pathnode.cpp \
+    recreationalbuilding.cpp
 
 HEADERS += \
     coordgrid.h \
+    dormbuilding.h \
     griddot.h \
+    lecturebuilding.h \
+    locationnode.h \
     mainwindow.h \
     mapcoords.h \
     myglwidget.h \
     node.h \
     pathnode.h \
+    recreationalbuilding.h \
     stb_image.h \
     stb_image_resize2.h
 

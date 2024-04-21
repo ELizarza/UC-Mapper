@@ -79,6 +79,13 @@
        </property>
       </widget>
      </item>
+     <item>
+      <widget class="QPushButton" name="pushButton_3">
+       <property name="text">
+        <string>Reset</string>
+       </property>
+      </widget>
+     </item>
     </layout>
    </widget>
    <widget class="QWidget" name="formLayoutWidget">
@@ -101,14 +108,13 @@
      <item row="0" column="1">
       <widget class="QComboBox" name="locationComboBox"/>
      </item>
-     <item row="2" column="1">
-      <widget class="QPushButton" name="pushButton">
-       <property name="text">
-        <string>Add location</string>
-       </property>
-      </widget>
-     </item>
      <item row="1" column="1">
+      <widget class="QTimeEdit" name="lectureStartTimeEdit"/>
+     </item>
+     <item row="2" column="1">
+      <widget class="QTimeEdit" name="lectureEndTimeEdit"/>
+     </item>
+     <item row="3" column="1">
       <spacer name="verticalSpacer_2">
        <property name="orientation">
         <enum>Qt::Vertical</enum>
@@ -120,6 +126,34 @@
         </size>
        </property>
       </spacer>
+     </item>
+     <item row="2" column="0">
+      <widget class="QLabel" name="lectureEndLabel">
+       <property name="text">
+        <string>Lecture End</string>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="lectureStartLabel">
+       <property name="text">
+        <string>Lecture Start</string>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0" colspan="2">
+      <widget class="QPushButton" name="pushButton">
+       <property name="text">
+        <string>Add location</string>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0" colspan="2">
+      <widget class="QPushButton" name="pushButton_4">
+       <property name="text">
+        <string>Route</string>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>

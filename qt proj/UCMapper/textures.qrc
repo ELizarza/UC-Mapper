@@ -6,5 +6,8 @@
         <file>imgs/defaultPing.png</file>
         <file>imgs/Red_dot.png</file>
         <file>imgs/pathNode.png</file>
+        <file>imgs/bluePing.png</file>
+        <file>imgs/greenPing.png</file>
+        <file>imgs/home.png</file>
     </qresource>
 </RCC>

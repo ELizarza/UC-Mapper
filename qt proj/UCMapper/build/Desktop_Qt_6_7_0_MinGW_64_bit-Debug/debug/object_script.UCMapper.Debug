@@ -1,11 +1,15 @@
 debug/coordgrid.o
+debug/dormbuilding.o
 debug/griddot.o
+debug/lecturebuilding.o
+debug/locationnode.o
 debug/main.o
 debug/mainwindow.o
 debug/mapcoords.o
 debug/myglwidget.o
 debug/node.o
 debug/pathnode.o
+debug/recreationalbuilding.o
 debug/qrc_textures.o
 debug/moc_mainwindow.o
 debug/moc_mapcoords.o
