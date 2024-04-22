@@ -1,5 +1,6 @@
 #include "pathnode.h"
 #include <QPainter>
+#include <QRandomGenerator>
 
 pathNode::pathNode(int x, int y)
     :Node(x, y)
@@ -47,13 +48,34 @@ void pathNode::setDirection(float ori)
             break;
     }
     */
-    offsetX = 50;
-    offsetY = 50;
+    offsetX = 25;
+    offsetY = 25;
 }
 
 float pathNode::getOrientation()
 {
     return orientation;
+}
+
+void pathNode::setCustomIcon(QImage custom, int width, int height)
+{
+    const QSize small(width, height);
+    icon = custom;
+    icon = icon.scaled(small, Qt::IgnoreAspectRatio, Qt::FastTransformation);
+    int rand = QRandomGenerator::global()->bounded(20);
+    offsetX = width/2 + rand;
+    offsetY = height/2 - rand;
+    if (orientation == 0){
+        return;
+    }
+    QImage temp = icon;
+    QPainter painter(&icon);
+    painter.setCompositionMode(QPainter::CompositionMode_Source);
+    painter.fillRect(icon.rect(), Qt::transparent);
+    painter.translate(25, 25);
+    painter.rotate(orientation);
+    painter.drawImage(-25, -25, temp);
+    painter.end();
 }
 
 void pathNode::setNodeIcon()

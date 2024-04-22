@@ -49,6 +49,21 @@ void Node::setCustomIcon(QImage custom, int width, int height)
     offsetY = height/2;
 }
 
+void Node::setGridCoords(int gx, int gy)
+{
+
+}
+
+int Node::getGridX()
+{
+
+}
+
+int Node::getGridY()
+{
+
+}
+
 
 //return functions for non-friend calls
 int Node::giveX()

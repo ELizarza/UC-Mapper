@@ -7,7 +7,7 @@
 class recreationalBuilding : public locationNode
 {
 public:
-    recreationalBuilding(int x, int y, QString setName, QString type, QTime dur);
+    recreationalBuilding(int x, int y, int gx, int gy, QString setName, QString type, QTime dur);
     void setNodeIcon();
 };
 

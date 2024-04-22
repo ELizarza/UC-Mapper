@@ -8,7 +8,7 @@
 class lectureBuilding : public locationNode
 {
 public:
-    lectureBuilding(int x, int y, QString setName, QString type);
+    lectureBuilding(int x, int y, int gx, int gy, QString setName, QString type);
     void setTime(QTime startT, QTime endT);
     void setNodeIcon();
 

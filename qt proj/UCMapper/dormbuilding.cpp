@@ -1,6 +1,6 @@
 #include "dormbuilding.h"
 
-dormBuilding::dormBuilding(int x, int y) : locationNode(x, y)
+dormBuilding::dormBuilding(int x, int y, int gx, int gy) : locationNode(x, y, gx, gy)
 {
     QTime temp;
     temp.setHMS(0, 0, 0);

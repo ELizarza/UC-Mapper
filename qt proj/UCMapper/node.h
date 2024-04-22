@@ -12,6 +12,8 @@ protected:
     QImage icon;
     float offsetX;
     float offsetY;
+    int gridX;
+    int gridY;
 public:
     Node();
     Node(int x, int y, QString setName);
@@ -21,6 +23,9 @@ public:
     void rename(QString newName);
     virtual void setNodeIcon();
     virtual void setCustomIcon(QImage custom, int width, int height);
+    virtual void setGridCoords(int gx, int gy);
+    virtual int getGridX();
+    virtual int getGridY();
 
     int giveX();
     int giveY();

@@ -7,7 +7,7 @@
 class dormBuilding : public locationNode
 {
 public:
-    dormBuilding(int x, int y);
+    dormBuilding(int x, int y, int gx, int gy);
     void setNodeIcon();
 };
 

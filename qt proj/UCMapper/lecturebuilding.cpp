@@ -1,6 +1,6 @@
 #include "lecturebuilding.h"
 
-lectureBuilding::lectureBuilding(int x, int y, QString setName, QString type) : locationNode(x, y, setName, type)
+lectureBuilding::lectureBuilding(int x, int y, int gx, int gy, QString setName, QString type) : locationNode(x, y, gx, gy, setName, type)
 {}
 
 void lectureBuilding::setTime(QTime startT, QTime endT)

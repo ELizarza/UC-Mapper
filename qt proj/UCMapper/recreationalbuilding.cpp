@@ -1,6 +1,6 @@
 #include "recreationalbuilding.h"
 
-recreationalBuilding::recreationalBuilding(int x, int y, QString setName, QString type, QTime dur) : locationNode(x, y, setName, type)
+recreationalBuilding::recreationalBuilding(int x, int y, int gx, int gy, QString setName, QString type, QTime dur) : locationNode(x, y, gx, gy, setName, type)
 {
     setDuration(dur);
 }

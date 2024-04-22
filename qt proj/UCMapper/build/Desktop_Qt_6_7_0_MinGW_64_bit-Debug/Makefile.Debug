@@ -158,6 +158,7 @@ debug/qrc_textures.cpp: ../../textures.qrc \
 		../../imgs/greenPing.png \
 		../../imgs/defaultPing.png \
 		../../imgs/pathNode.png \
+		../../imgs/alt\ arrow\ icon.png \
 		../../imgs/home.png
 	C:\Qt\6.7.0\mingw_64\bin\rcc.exe -name textures --no-zstd ..\..\textures.qrc -o debug\qrc_textures.cpp
 
@@ -359,6 +360,33 @@ debug/moc_mainwindow.cpp: ../../mainwindow.h \
 		C:/Qt/6.7.0/mingw_64/include/QtCore/qlocale.h \
 		C:/Qt/6.7.0/mingw_64/include/QtGui/qguiapplication_platform.h \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/QTime \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qdatetime.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qcalendar.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QListWidgetItem \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qlistwidget.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qlistview.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qframe.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyleoption.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/6.7.0/mingw_64/include/QtGui/qvalidator.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qregularexpression.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qslider.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractslider.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyle.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabbar.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qrubberband.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/QMap \
+		../../mapcoords.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QWidget \
+		../../node.h \
+		../../dormbuilding.h \
+		../../locationnode.h \
 		debug/moc_predefs.h \
 		C:/Qt/6.7.0/mingw_64/bin/moc.exe
 	C:\Qt\6.7.0\mingw_64\bin\moc.exe $(DEFINES) --include "C:/Users/Eddie/OneDrive/school work/CSE 160/Project/qt proj/UCMapper/build/Desktop_Qt_6_7_0_MinGW_64_bit-Debug/debug/moc_predefs.h" -IC:/Qt/6.7.0/mingw_64/mkspecs/win32-g++ -I"C:/Users/Eddie/OneDrive/school work/CSE 160/Project/qt proj/UCMapper" -IC:/Qt/6.7.0/mingw_64/include -IC:/Qt/6.7.0/mingw_64/include/QtOpenGLWidgets -IC:/Qt/6.7.0/mingw_64/include/QtOpenGL -IC:/Qt/6.7.0/mingw_64/include/QtWidgets -IC:/Qt/6.7.0/mingw_64/include/QtGui -IC:/Qt/6.7.0/mingw_64/include/QtCore -I. -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++ -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/x86_64-w64-mingw32 -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include/c++/backward -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include -IC:/Qt/Tools/mingw1120_64/lib/gcc/x86_64-w64-mingw32/11.2.0/include-fixed -IC:/Qt/Tools/mingw1120_64/x86_64-w64-mingw32/include ..\..\mainwindow.h -o debug\moc_mainwindow.cpp
@@ -1937,6 +1965,33 @@ debug/main.o: ../../main.cpp ../../mainwindow.h \
 		C:/Qt/6.7.0/mingw_64/include/QtCore/qlocale.h \
 		C:/Qt/6.7.0/mingw_64/include/QtGui/qguiapplication_platform.h \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/QTime \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qdatetime.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qcalendar.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QListWidgetItem \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qlistwidget.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qlistview.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qframe.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qitemselectionmodel.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyleoption.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
+		C:/Qt/6.7.0/mingw_64/include/QtGui/qvalidator.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qregularexpression.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qslider.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractslider.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyle.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabbar.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qrubberband.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/QMap \
+		../../mapcoords.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QWidget \
+		../../node.h \
+		../../dormbuilding.h \
+		../../locationnode.h \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QApplication \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qapplication.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\main.o ..\..\main.cpp
@@ -2130,12 +2185,17 @@ debug/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		C:/Qt/6.7.0/mingw_64/include/QtCore/qlocale.h \
 		C:/Qt/6.7.0/mingw_64/include/QtGui/qguiapplication_platform.h \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabwidget.h \
-		ui_mainwindow.h \
-		C:/Qt/6.7.0/mingw_64/include/QtCore/QVariant \
-		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QApplication \
-		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qapplication.h \
-		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QComboBox \
-		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qcombobox.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/QTime \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qdatetime.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qcalendar.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QListWidgetItem \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qlistwidget.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qlistview.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemview.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qframe.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qitemselectionmodel.h \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemdelegate.h \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyleoption.h \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractspinbox.h \
@@ -2146,8 +2206,18 @@ debug/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qstyle.h \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qtabbar.h \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qrubberband.h \
-		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qframe.h \
-		C:/Qt/6.7.0/mingw_64/include/QtCore/qabstractitemmodel.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/QMap \
+		../../mapcoords.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QWidget \
+		../../node.h \
+		../../dormbuilding.h \
+		../../locationnode.h \
+		ui_mainwindow.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/QVariant \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QApplication \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qapplication.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QComboBox \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qcombobox.h \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QFormLayout \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qformlayout.h \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QLayout \
@@ -2161,11 +2231,6 @@ debug/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		C:/Qt/6.7.0/mingw_64/include/QtGui/qpicture.h \
 		C:/Qt/6.7.0/mingw_64/include/QtGui/qtextdocument.h \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QListWidget \
-		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qlistwidget.h \
-		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qlistview.h \
-		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractitemview.h \
-		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qabstractscrollarea.h \
-		C:/Qt/6.7.0/mingw_64/include/QtCore/qitemselectionmodel.h \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QMenuBar \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qmenubar.h \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qmenu.h \
@@ -2175,8 +2240,10 @@ debug/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QSpacerItem \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QStatusBar \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qstatusbar.h \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QTimeEdit \
+		C:/Qt/6.7.0/mingw_64/include/QtWidgets/qdatetimeedit.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qtimezone.h \
 		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QVBoxLayout \
-		C:/Qt/6.7.0/mingw_64/include/QtWidgets/QWidget \
 		C:/Qt/6.7.0/mingw_64/include/QtOpenGLWidgets/QOpenGLWidget \
 		C:/Qt/6.7.0/mingw_64/include/QtOpenGLWidgets/qopenglwidget.h \
 		C:/Qt/6.7.0/mingw_64/include/QtOpenGLWidgets/qtopenglwidgetsglobal.h \
@@ -2195,19 +2262,15 @@ debug/mainwindow.o: ../../mainwindow.cpp ../../mainwindow.h \
 		C:/Qt/6.7.0/mingw_64/include/QtOpenGL/qopenglbuffer.h \
 		C:/Qt/6.7.0/mingw_64/include/QtOpenGL/qtopenglglobal.h \
 		C:/Qt/6.7.0/mingw_64/include/QtOpenGL/qtopenglexports.h \
-		../../node.h \
-		../../mapcoords.h \
 		../../coordgrid.h \
 		../../griddot.h \
 		../../pathnode.h \
 		../../lecturebuilding.h \
-		C:/Qt/6.7.0/mingw_64/include/QtCore/QTime \
-		C:/Qt/6.7.0/mingw_64/include/QtCore/qdatetime.h \
-		C:/Qt/6.7.0/mingw_64/include/QtCore/qcalendar.h \
-		../../locationnode.h \
 		../../recreationalbuilding.h \
-		../../dormbuilding.h \
-		C:/Qt/6.7.0/mingw_64/include/QtGui/QPixmap
+		C:/Qt/6.7.0/mingw_64/include/QtGui/QPixmap \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/QDebug \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/QQueue \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qqueue.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\mainwindow.o ..\..\mainwindow.cpp
 
 debug/mapcoords.o: ../../mapcoords.cpp ../../mapcoords.h \
@@ -3003,7 +3066,9 @@ debug/pathnode.o: ../../pathnode.cpp ../../pathnode.h \
 		C:/Qt/6.7.0/mingw_64/include/QtGui/QPainter \
 		C:/Qt/6.7.0/mingw_64/include/QtGui/qpainter.h \
 		C:/Qt/6.7.0/mingw_64/include/QtGui/qtextoption.h \
-		C:/Qt/6.7.0/mingw_64/include/QtGui/qpen.h
+		C:/Qt/6.7.0/mingw_64/include/QtGui/qpen.h \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/QRandomGenerator \
+		C:/Qt/6.7.0/mingw_64/include/QtCore/qrandom.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o debug\pathnode.o ..\..\pathnode.cpp
 
 debug/recreationalbuilding.o: ../../recreationalbuilding.cpp ../../recreationalbuilding.h \

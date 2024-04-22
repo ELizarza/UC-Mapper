@@ -11,6 +11,7 @@ public:
     void setDirection(float ori);
     void setNodeIcon();
     float getOrientation();
+    void setCustomIcon(QImage custom, int width, int height);
 
 private:
     QString visibility = "g"; //"g" = show, "r" = hide, "y" = building, path nodes should always be shown

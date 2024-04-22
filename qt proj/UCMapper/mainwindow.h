@@ -42,6 +42,8 @@ private slots:
 
     void on_listWidget_currentItemChanged(QListWidgetItem *current, QListWidgetItem *previous);
 
+    void on_pushButton_4_clicked();
+
 private:
     Ui::MainWindow *ui;
     mapCoords* map;
@@ -53,6 +55,25 @@ private:
     QList<Node*> fullNodeList;
     QMap<QListWidgetItem* ,Node*> visibleNodes;
     QListWidgetItem* selectedItem;
+
+    struct stepNode {
+        QString visibility; //"r" = not pathable, "y" = available destination but not pathable, "g" = pathable
+        stepNode* topLeft;
+        stepNode* top;
+        stepNode* topRight;
+        stepNode* Left;
+        stepNode* Right;
+        stepNode* botLeft;
+        stepNode* bottom;
+        stepNode* botRight;
+        int coords[2];
+        bool visited;
+        int orientation = 0;
+        stepNode* pathedFrom;
+    };
+
+    void stepNodePather(stepNode*target, stepNode *matrix[15][15], int x, int y);
+    QList<stepNode*> breadthFirstSearch(stepNode *matrix[15][15], int startX, int startY, int endX, int endY);
 
 
 };
