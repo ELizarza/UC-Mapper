@@ -36,6 +36,16 @@ QList<gridDot *> coordGrid::packageNodes()
     return package;
 }
 
+void coordGrid::hideNode(int x, int y)
+{
+    matrix[x][y]->setVisibility("r");
+}
+
+void coordGrid::setYellowNode(int x, int y)
+{
+    matrix[x][y]->setVisibility("y");
+}
+
 
 void coordGrid::excludeNode(int x, int y){
     matrix[x][y]->setVisibility(QString("r"));

@@ -80,6 +80,7 @@ MainWindow::MainWindow(QWidget *parent)
         fullNodeList.append(pack[i]);
     }
     */
+
     map->createSource(fullNodeList);
     map->recalculateResult();
     ui->label_2->setPixmap(map->createPixmap());
@@ -241,7 +242,7 @@ void MainWindow::on_pushButton_clicked()    //add location button
 
         }
         //insert name and location into widgetItem and node
-        newLoc = new QListWidgetItem(QIcon(":/imgs/imgs/bluePing"), QString("%1, %2-%3").arg(locName).arg(startTime.toString("h:m ap")).arg(endTime.toString("h:m ap")));
+        newLoc = new QListWidgetItem(QIcon(":/imgs/imgs/bluePing"), QString("%1, %2-%3").arg(locName).arg(startTime.toString("h:mm ap")).arg(endTime.toString("h:mm ap")));
         newNode = new lectureBuilding((tempX/14.0)*100, (tempY/14.0)*100, int(tempX), int(tempY), QString("%1").arg(locName), QString("Scheduled Class"));
         //newNode->setGridCoords(int(tempX), int(tempY));
         newNode->setNodeIcon();
@@ -308,7 +309,7 @@ void MainWindow::on_pushButton_clicked()    //add location button
         temp.setHMS(0, 0, 0);
         temp = temp.addSecs(startTime.secsTo(endTime));
 
-        newLoc = new QListWidgetItem(QIcon(":/imgs/imgs/greenPing"), QString("%1, %2-%3").arg(locName).arg(startTime.toString("h:m ap")).arg(endTime.toString("h:m ap")));
+        newLoc = new QListWidgetItem(QIcon(":/imgs/imgs/greenPing"), QString("%1, %2-%3").arg(locName).arg(startTime.toString("h:mm ap")).arg(endTime.toString("h:mm ap")));
         newNode = new recreationalBuilding((tempX/14.0)*100, (tempY/14.0)*100, int(tempX), int(tempY), QString("%1").arg(locName), QString("%1").arg(locType), temp);
         //newNode->setGridCoords(int(tempX), int(tempY));
         newNode->setNodeIcon();
@@ -458,6 +459,8 @@ void MainWindow::on_pushButton_4_clicked()  //route button, this is where we cre
             matrix[i][j]->botLeft = nullptr;
             matrix[i][j]->bottom = nullptr;
             matrix[i][j]->botRight = nullptr;
+
+            matrix[i][j]->pathedFrom = nullptr;
         }
     }
 
@@ -471,7 +474,7 @@ void MainWindow::on_pushButton_4_clicked()  //route button, this is where we cre
 
     //initalize walkable paths and valid locations
 
-    int desty [] = {10, 11,     13, 12,     6, 13,  4,5,    2,5,    1,6,    7,9,    7,13,   11,13};
+    int desty [] = {10, 11,     13, 12,     6, 13,  4,5,    2,5,    1,6,    7,9,    7,13,   11,13,  12,13};
     for (int i = 0; i < 17; i++){
         if (i % 2 == 0){
             matrix[desty[i]][desty[i+1]]->visibility = QString("y");
@@ -485,12 +488,29 @@ void MainWindow::on_pushButton_4_clicked()  //route button, this is where we cre
         matrix[i][i+4]->visibility = QString("g");
     }
 
-    int walkable [] = {3, 5,   2, 6,   1, 7,   7, 10,  8, 9,   6, 10,  7, 9,   8,10,   5, 13,  6, 12,    10, 4,     12, 13,  3, 7,    3, 9,   6, 12,    4, 8};
-    for (int i = 0; i < 15; i++){
+    int walkable [] = {3, 5,   2, 6,   1, 7,   7, 10,  8, 9,   6, 10,  7, 9,   8,10,   5, 13,  6, 12,    10, 4,     12, 13,  3, 7,    3, 9,   6, 12,    4, 8,   5,13,   6,12};
+    for (int i = 0; i < 35; i++){
         if (i % 2 == 0){
             matrix[walkable[i]][walkable[i+1]]->visibility = QString("g");
         }
     }
+
+    //debug: show all visible coords
+    /*
+    coordGrid* coordVisual = new coordGrid();
+    QList<gridDot*> pack;
+    for (int i = 0; i < 15; i++){
+        for (int j = 0; j < 15; j++){
+            if(matrix[i][j]->visibility == "r") coordVisual->hideNode(i, j);
+            if(matrix[i][j]->visibility == "y") coordVisual->setYellowNode(i, j);
+        }
+    }
+    pack = coordVisual->packageNodes();
+
+    for (int i = 0; i < pack.length(); i++){
+        if (pack[i]->giveVisibility() != "r")fullNodeList.append(pack[i]);
+    }
+    */
 
     //QList<stepNode*> cool = breadthFirstSearch(matrix, 11, 11, 5, 5);
 
@@ -602,72 +622,72 @@ QList<MainWindow::stepNode *> MainWindow::breadthFirstSearch(stepNode *matrix[15
         qDebug() << "matrix didn't crash!";
         */
 
-        if(currentNode->topLeft != nullptr && currentNode->topLeft->visited == false){
+        if(currentNode->topLeft != nullptr && currentNode->topLeft->visited == false && currentNode->topLeft->visibility != "r"){
             currentNode->topLeft->visited = true;
-            queue.enqueue(currentNode->topLeft);
+            if (currentNode->topLeft->visibility == "g") queue.enqueue(currentNode->topLeft);
             currentNode->topLeft->pathedFrom = currentNode;
             if (currentNode->topLeft == end) {
                 qDebug() << "loop broken";
                 break;
             }
         }
-        if(currentNode->top != nullptr && currentNode->top->visited == false){
+        if(currentNode->top != nullptr && currentNode->top->visited == false && currentNode->top->visibility != "r"){
             currentNode->top->visited = true;
-            queue.enqueue(currentNode->top);
+            if (currentNode->top->visibility == "g") queue.enqueue(currentNode->top);
             currentNode->top->pathedFrom = currentNode;
             if (currentNode->top == end) {
                 qDebug() << "loop broken";
                 break;
             }
         }
-        if(currentNode->topRight != nullptr && currentNode->topRight->visited == false){
+        if(currentNode->topRight != nullptr && currentNode->topRight->visited == false && currentNode->topRight->visibility != "r"){
             currentNode->topRight->visited = true;
-            queue.enqueue(currentNode->topRight);
+            if (currentNode->topRight->visibility == "g") queue.enqueue(currentNode->topRight);
             currentNode->topRight->pathedFrom = currentNode;
             if (currentNode->topRight == end) {
                 qDebug() << "loop broken";
                 break;
             }
         }
-        if(currentNode->Left != nullptr && currentNode->Left->visited == false){
+        if(currentNode->Left != nullptr && currentNode->Left->visited == false && currentNode->Left->visibility != "r"){
             currentNode->Left->visited = true;
-            queue.enqueue(currentNode->Left);
+            if (currentNode->Left->visibility == "g") queue.enqueue(currentNode->Left);
             currentNode->Left->pathedFrom = currentNode;
             if (currentNode->Left == end) {
                 qDebug() << "loop broken";
                 break;
             }
         }
-        if(currentNode->Right != nullptr && currentNode->Right->visited == false){
+        if(currentNode->Right != nullptr && currentNode->Right->visited == false && currentNode->Right->visibility != "r"){
             currentNode->Right->visited = true;
-            queue.enqueue(currentNode->Right);
+            if (currentNode->Right->visibility == "g") queue.enqueue(currentNode->Right);
             currentNode->Right->pathedFrom = currentNode;
             if (currentNode->Right == end) {
                 qDebug() << "loop broken";
                 break;
             }
         }
-        if(currentNode->botLeft != nullptr && currentNode->botLeft->visited == false){
+        if(currentNode->botLeft != nullptr && currentNode->botLeft->visited == false && currentNode->botLeft->visibility != "r"){
             currentNode->botLeft->visited = true;
-            queue.enqueue(currentNode->botLeft);
+            if (currentNode->botLeft->visibility == "g") queue.enqueue(currentNode->botLeft);
             currentNode->botLeft->pathedFrom = currentNode;
             if (currentNode->botLeft == end) {
                 qDebug() << "loop broken";
                 break;
             }
         }
-        if(currentNode->bottom != nullptr && currentNode->bottom->visited == false){
+        if(currentNode->bottom != nullptr && currentNode->bottom->visited == false && currentNode->bottom->visibility != "r"){
             currentNode->bottom->visited = true;
-            queue.enqueue(currentNode->bottom);
+            if (currentNode->bottom->visibility == "g") queue.enqueue(currentNode->bottom);
             currentNode->bottom->pathedFrom = currentNode;
             if (currentNode->bottom == end) {
                 qDebug() << "loop broken";
                 break;
             }
         }
-        if(currentNode->botRight != nullptr && currentNode->botRight->visited == false){
+        if(currentNode->botRight != nullptr && currentNode->botRight->visited == false && currentNode->botRight->visibility != "r"){
             currentNode->botRight->visited = true;
-            queue.enqueue(currentNode->botRight);
+            if (currentNode->botRight->visibility == "g") queue.enqueue(currentNode->botRight);
             currentNode->botRight->pathedFrom = currentNode;
             if (currentNode->botRight == end) {
                 qDebug() << "loop broken";
@@ -681,6 +701,10 @@ QList<MainWindow::stepNode *> MainWindow::breadthFirstSearch(stepNode *matrix[15
 
     while (currentNode != start){
         finalPath.push_front(currentNode);
+        if (currentNode->pathedFrom == nullptr){
+            qDebug() << "incomplete path detected";
+            break;
+        }
         currentNode = currentNode->pathedFrom;
     }
 

@@ -10,6 +10,8 @@ public:
     coordGrid();
     ~coordGrid();
     QList<gridDot*> packageNodes();
+    void hideNode(int x, int y);
+    void setYellowNode(int x, int y);
     void excludeNode(int x, int y);
 private:
     gridDot* matrix[15][15];

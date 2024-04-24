@@ -112,11 +112,15 @@ public:
 
         lectureStartTimeEdit = new QTimeEdit(formLayoutWidget);
         lectureStartTimeEdit->setObjectName("lectureStartTimeEdit");
+        lectureStartTimeEdit->setMaximumTime(QTime(23, 30, 0));
+        lectureStartTimeEdit->setMinimumTime(QTime(5, 0, 0));
 
         formLayout_2->setWidget(1, QFormLayout::FieldRole, lectureStartTimeEdit);
 
         lectureEndTimeEdit = new QTimeEdit(formLayoutWidget);
         lectureEndTimeEdit->setObjectName("lectureEndTimeEdit");
+        lectureEndTimeEdit->setMaximumTime(QTime(23, 30, 0));
+        lectureEndTimeEdit->setMinimumTime(QTime(5, 0, 0));
 
         formLayout_2->setWidget(2, QFormLayout::FieldRole, lectureEndTimeEdit);
 

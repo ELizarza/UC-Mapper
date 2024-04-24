@@ -47,8 +47,8 @@ private slots:
 private:
     Ui::MainWindow *ui;
     mapCoords* map;
-    QTime startTime;
-    QTime endTime;
+    QTime startTime = QTime(5, 00);
+    QTime endTime = QTime(5, 00);
     int location;
     QString locationName;
     dormBuilding* dorm;
